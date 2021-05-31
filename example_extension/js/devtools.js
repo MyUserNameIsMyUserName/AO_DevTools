@@ -1,0 +1,1 @@
+chrome.devtools.panels.create("AO_DEV", null, "/html/panel.html", null);

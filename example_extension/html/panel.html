@@ -1,0 +1,156 @@
+<html>
+  <head> </head>
+  <body>
+    <div id="aoDevToolsPanel" class="ao_panel">
+      <div class="panel_title"></div>
+      <div class="panel_content"></div>
+      <div class="panel_footer"></div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: monospace;
+      }
+
+      html,
+      body {
+        background: #262626;
+        color: #d0d0d0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 2px inset blue;
+      }
+
+      body {
+        box-shadow: 0 0 2px inset lightblue;
+      }
+
+      .ao_panel {
+        height: 100%;
+        display: flex;
+        box-shadow: 0 0 2px inset lime;
+        flex-direction: column;
+      }
+      .ao_panel .panel_title,
+      .ao_panel .panel_content,
+      .ao_panel .panel_footer {
+        min-height: 1em;
+        display: flex;
+        flex-direction: row;
+      }
+      .ao_panel .panel_title {
+        background: #1d1d1d;
+        flex-direction: row;
+        padding: 0.5em;
+        align-items: center;
+      }
+      .ao_panel .panel_title h2 {
+        font-size: 34px;
+        letter-spacing: 1px;
+        padding: 0.5em;
+      }
+      .ao_panel .panel_title h2 span {
+        padding: 0 0.25em;
+        color: #58f311;
+      }
+      .ao_panel .panel_title h2 span.blink {
+        padding: 0;
+      }
+      .ao_panel .panel_content {
+        flex: 1;
+      }
+      .ao_panel .panel_content .half {
+        display: flex;
+        flex: 1;
+        pading: 1em;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .ao_panel .panel_content .half h1 {
+        font-size: 34px;
+        color: #58f311;
+      }
+      .ao_panel .panel_content .half img {
+        height: auto;
+        width: 50%;
+        margin: 0 auto;
+      }
+      .ao_panel .panel_footer {
+        flex-direction: row;
+        padding: 0.5em;
+        background: #1d1d1d;
+      }
+
+      .blink {
+        -webkit-animation-name: bliking;
+        animation-name: bliking;
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+      }
+
+      @-webkit-keyframes bliking {
+        0% {
+          opacity: 0;
+        }
+        49% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes bliking {
+        0% {
+          opacity: 0;
+        }
+        49% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .triangle {
+        stroke-dasharray: 17;
+        -webkit-animation: dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95)
+          infinite;
+        animation: dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+      }
+
+      @-webkit-keyframes dash {
+        to {
+          stroke-dashoffset: 136;
+        }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 136;
+        }
+      }
+      @-webkit-keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+    <script src="panel.js"></script>
+  </body>
+</html>
