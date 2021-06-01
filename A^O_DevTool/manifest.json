@@ -1,11 +1,41 @@
 {
-    "manifest_version" : 2,
+  "manifest_version": 2,
 
-    "name" : "A^O Dev Tools",
-    "version" : "0.1",
+  "name": "A^O Dev Tools",
+  "version": "0.1",
 
-    "description" : "AO_DevTools for easier development and debugging",
-    "author" : "_.V._",
+  "description": "AO_DevTools for easier development and debugging",
+  "author": "_.V._",
 
-    "devtools_page" : "html/devtools.html"
+  "devtools_page": "html/devtools.html",
+  "browser_action": {
+    "default_icon": "img/logo.png",
+    "default_title": "AO_DevTools Web Vitals",
+    "default_popup": "web-vitals-extension/src/browser_action/popup.html"
+  },
+  "options_page": "web-vitals-extension/src/options/options.html",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "http://localhost/",
+    "http://*/*",
+    "https://*/*",
+    "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?*"
+  ],
+  "web_accessible_resources": [
+    "web-vitals-extension/src/browser_action/viewer.css",
+    "/web-vitals-extension/node_modules/web-vitals/dist/web-vitals.es5.min.js"
+  ],
+  "background": {
+    "scripts": ["web-vitals-extension/src/bg/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "css": ["web-vitals-extension/src/browser_action/viewer.css"],
+      "js": ["web-vitals-extension/src/browser_action/lodash-debounce-custom.js"]
+    }
+  ]
 }
