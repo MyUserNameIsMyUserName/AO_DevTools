@@ -153,31 +153,31 @@
 
 
       
-      svg polygon.triangle {
-        stroke-dasharray: 5;
-        animation-duration: 2s;
-      }
-
-      svg.slowdown polygon.triangle {
-        animation-name: slowdown;
-        animation-duration: 4s;
-        stroke-dasharray: 25;
-        animation-timing-function: linear;
-      }
-
-
-      svg.connected polygon.triangle {
-        animation-name: slowdown;
-        animation-timing-function: linear;
-        fill: #0a3a0361;
-        stroke: green;
-      }
-
-      @keyframes slowdown {
-        to {
-          stroke-dashoffset: 100;
+        svg polygon.triangle {
+          stroke-dasharray: 5;
+          animation-duration: 2s;
         }
-      }
+
+        svg.slowdown polygon.triangle {
+          animation-name: slowdown;
+          animation-duration: 4s;
+          stroke-dasharray: 25;
+          animation-timing-function: linear;
+        }
+
+
+        svg.connected polygon.triangle {
+          animation-name: slowdown;
+          animation-timing-function: linear;
+          fill: #0a3a0361;
+          stroke: green;
+        }
+
+        @keyframes slowdown {
+          to {
+            stroke-dashoffset: 100;
+          }
+        }
     </style>
     <script src="../js/panel.js"></script>
   </body>
